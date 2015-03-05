@@ -37,7 +37,7 @@ def num_vowels(s):
 
     return num_vowels
 
-def collecht_vowels(s):
+def collect_vowels(s):
     '''(str) -> str
 
     Return the vowels of s.
@@ -57,5 +57,31 @@ def collecht_vowels(s):
     for char in s:
         if char in 'aeiouAEIOU':
             string = string + char
+
+    return string
+
+def up_to_vowel(s):
+    '''(str) -> str
+
+    Return a substring of s. The substring starts from
+    the beginning of s and includes the last consonant
+    before the first vowel is reached.
+    
+    >>> up_to_vowel('Hello')
+    'H'
+    >>> up_to_vowel('My name is COMPUTIX')
+    'My n'
+    >>> up_to_vowel('Xyz')
+    'Xyz'
+    >>> up_to_vowel('I like bread.')
+    ''
+    '''
+
+    i = 0
+    string = ''
+    
+    while i < len(s) and not (s[i] in 'aeiouAEIOU'):
+        string = string + s[i]
+        i = i + 1
 
     return string
