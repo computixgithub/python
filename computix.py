@@ -100,4 +100,47 @@ def ask_user(prompt):
         answer = input(prompt)
 
     return answer
+
+def find_neighbour(s):
+    '''(str) -> str
+
+    Return the equal neighbouring elements of string s.
+    
+    >>> find_neighbour('abbccdeffg')
+    'bcf'
+    >>> find_neighbour('abc')
+    ''
+     '''
+
+    # Define the accumulator.
+    string = ''
+    
+    for i in range(len(s) - 1):
+        if s[i + 1] == s[i]:
+            string = string + s[i + 1]
+
+    return string
         
+def shift_left(L):
+    '''(list) -> NoneType
+
+    Shift each item in list L one position to the left
+    and shift the first item to the last position.
+
+    Precondition: len(L) >= 1
+    '''
+
+##    first_item = L[0]
+##
+##    for i in range(len(L) - 1):
+##        L[i] = L[i + 1]
+##
+##    L[-1] = first_item
+##
+##    print(L)
+    # L.append(first_item)
+
+    # With methods.
+    first_item = L.pop(0)
+    L.append(first_item)
+    print(L)
