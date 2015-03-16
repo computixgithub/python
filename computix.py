@@ -138,9 +138,30 @@ def shift_left(L):
 ##    L[-1] = first_item
 ##
 ##    print(L)
-    # L.append(first_item)
 
     # With methods.
     first_item = L.pop(0)
     L.append(first_item)
     print(L)
+
+def sum_numbers(list1, list2):
+    '''(list of number, list of number) -> list of number
+
+    Return a new list in which each item is the sum of the
+    numbers at the corresponding position of list1 and list2.
+
+    Precondition: len(list1) == len(list2)
+
+    >>> sum_numbers([1, 4, 9], [5, 10, 20])
+    [6, 14, 29]
+    >>> sum_numbers([1.3, 7, 9.4], [2.4, 3.9, 6.2])
+    [3.7, 10.9, 15.6]
+    '''
+
+    new_list = []
+
+    for i in range(len(list1)):
+        summe = list1[i] + list2[i]
+        new_list.append(summe)
+
+    return new_list
