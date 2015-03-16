@@ -191,3 +191,30 @@ def count_matches(s1, s2):
             num_matches = num_matches + 1
 
     return num_matches
+
+def show_matches(s1, s2):
+    '''(str, str) -> str
+
+    Return a substring of s1 and s2 which consists
+    of the equal items at the corresponding positions
+    of s1 and s2.
+
+    Precondition: len(s1) == len(s2)
+    
+    >>> show_matches('Hello', 'Bello')
+    'ello'
+    >>> show_matches('My dog', 'My cat')
+    'My '
+    >>> show_matches('I am tired', 'I am hired!')
+    'I am ired'
+    >>> show_matches('ice', 'dog')
+    ''
+    '''
+
+    match_str = ''
+
+    for i in range(len(s1)):
+        if s1[i] == s2[i]:
+            match_str = match_str + s1[i]
+
+    return match_str
