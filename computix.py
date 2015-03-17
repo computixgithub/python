@@ -222,12 +222,13 @@ def show_matches(s1, s2):
 def calc_average(list):
     '''(list of list of number) -> list of float
 
-    Return the arithmetic mean of lists. The position of the
-    means correspondends with their lists out of which
-    the means were calculated.
+    Return a new list in which each item is the average
+    (arithmetic mean) of the inner lists within list.
 
     >>> calc_average([[1, 2, 3], [4, 5, 6, 7]])
     [2.0, 5.5]
+    >>> calc_average([[1, 2, 3]])
+    [2]
     '''
 
     # Set the accumulator.
