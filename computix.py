@@ -218,3 +218,28 @@ def show_matches(s1, s2):
             match_str = match_str + s1[i]
 
     return match_str
+    
+def calc_average(list):
+    '''(list of list of number) -> list of float
+
+    Return the arithmetic mean of lists. The position of the
+    means correspondends with their lists out of which
+    the means were calculated.
+
+    >>> calc_average([[1, 2, 3], [4, 5, 6, 7]])
+    [2.0, 5.5]
+    '''
+
+    # Set the accumulator.
+    mean = []
+
+    # Calculate the arithmetic mean
+    # of each list wihtin parameter list.
+    for inner_list in list:
+        sum = 0
+        for value in inner_list:
+            sum = sum + value
+        average = sum / len(inner_list)
+        mean.append(average)
+    
+    return mean
