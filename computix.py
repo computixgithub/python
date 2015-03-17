@@ -1,3 +1,66 @@
+import math
+
+def area(base, height):
+    '''(number, number) -> float
+
+    Return the are of a triangle which has a base in length of base
+    and a height in length of height.
+
+    >>> area(10, 20)
+    100.0
+    >>> area(20, 11.23)
+    112.30000000000001
+    '''
+
+    return base * height / 2
+
+def perimeter(side1, side2, side3):
+    '''(number, number, number) -> number
+
+    Return the perimeter of a triangle with sides of length
+    side1, side2 and side3.
+
+    >>> perimeter(10, 20, 15)
+    45
+    >>> perimeter(8.27, 7.12, 5.97)
+    21.36
+    '''
+
+    return side1 + side2 + side3
+
+def semiperimeter(side1, side2, side3):
+    '''(number, number, number) -> float
+
+    Return the semiperimeter of a triangle with sides of
+    length side1, side2 and side3.
+
+    >>> semiperimeter(3, 4, 5)
+    6.0
+    >>> semiperimeter(10.5, 6, 9.3)
+    12.9
+    '''    
+
+    return perimeter(side1, side2, side3) / 2
+
+def area_hero(side1, side2, side3):
+    '''(number, number, number) -> float
+
+    Return the area of a triangle with sides of length
+    side1, side2 and side3, using Hero's formula to
+    calculate the area.
+    
+    >>> area_hero(2, 2, 2)
+    1.7320508075688772
+    >>> area_hero(7, 9, 10.37)
+    30.995371769820316
+    >>> area_hero(3, 4, 5)
+    6.0
+    '''
+
+    semi = semiperimeter(side1, side2, side3)
+    area = math.sqrt(semi * (semi - side1) * (semi - side2) * (semi - side3))
+    return area
+
 def is_even(num):
     '''(num) -> bool
 
