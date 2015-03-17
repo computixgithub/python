@@ -79,6 +79,7 @@ def is_even(num):
     '''
 
     return num % 2 == 0
+
 def num_vowels(s):   
     '''(str) -> int
 
@@ -136,7 +137,7 @@ def up_to_vowel(s):
     'My n'
     >>> up_to_vowel('Xyz')
     'Xyz'
-    >>> kjup_to_vowel('I like bread.')
+    >>> up_to_vowel('I like bread.')
     ''
     '''
 
